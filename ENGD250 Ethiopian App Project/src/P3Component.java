@@ -27,6 +27,6 @@ public class P3Component extends JComponent {
 		super.paintComponent(g);
 
 		Graphics2D graphics2 = (Graphics2D) g;
-		g.d
+		
 	}
 }
