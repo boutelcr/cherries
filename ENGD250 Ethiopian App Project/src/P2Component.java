@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
+import java.util.ArrayList;
 
 import javax.swing.JComponent;
 
@@ -15,7 +16,8 @@ public class P2Component extends JComponent {
 
 	// The component of Prototype 2 of our concept
 
-	P2Shape adam;
+	ArrayList<P2Shape> adams = new ArrayList<P2Shape>();
+	ArrayList<Point2D> newAdamNodes = new ArrayList<Point2D>();
 	
 	public P2Component() {
 		super();
@@ -24,7 +26,11 @@ public class P2Component extends JComponent {
 		addMouseListener(mousehandler);
 		addMouseMotionListener(mousehandler);
 		
-		adam = new P2Shape(10, 100);
+		adams.add(new P2Shape(10, 100, 8));
+		adams.add(new P2Shape(200, 40, 3));
+		for (int i=0; i<11; i++) {
+			adams.add(new P2Shape(500, 10+50*i, 1));
+		}
 	}
 	
 	@Override
@@ -33,25 +39,33 @@ public class P2Component extends JComponent {
 		super.paintComponent(g);
 
 //		adam = new P2Shape(10, 100);
-
-		Graphics2D graphics2 = (Graphics2D) g;
-		graphics2.setStroke(new BasicStroke(2));
-		graphics2.setColor(adam.getColor());
-
-		graphics2.draw(adam.getBody());
-		graphics2.fill(adam.getBody());
-
 		
-		
+		for (P2Shape adam : adams) {
+			Graphics2D graphics2 = (Graphics2D) g;
+			graphics2.setStroke(new BasicStroke(2));
+			graphics2.setColor(adam.getColor());
+
+			graphics2.draw(adam.getBody());
+			graphics2.fill(adam.getBody());
+		}		
 	}
 
-	
+	public void drawNewAdam(Point2D point) {
+		if (newAdamNodes.size() < 5) {
+			newAdamNodes.add(point);
+		} else {
+			adams.add(new P2Shape(newAdamNodes));
+			P2Component.this.repaint();
+			newAdamNodes.clear();
+		}
+	}
 	
 	public P2Shape inShape(Point2D point) {
-		if (adam.body.contains(point.getX(), point.getY())) {
-			return adam;
-		}
-		
+		for (P2Shape adam : adams) {
+			if (adam.getBody().contains(point.getX(), point.getY())) {
+				return adam;
+			}
+		}	
 		return null;
 	}
 
@@ -70,8 +84,11 @@ public class P2Component extends JComponent {
 					P2Component.this.repaint();
 
 				} else {
-					System.out.println("reserved for later");
+					System.out.println("Reserved for later");
 				}
+			} else if (e.getButton() == MouseEvent.BUTTON1) {
+				System.out.println("pwop");
+				drawNewAdam(e.getPoint());
 			}
 		}
 
