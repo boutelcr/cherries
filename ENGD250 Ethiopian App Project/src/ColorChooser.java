@@ -35,16 +35,16 @@ public class ColorChooser implements ChangeListener{
 		colorChooser = new JColorChooser();
 		colorChooser.getSelectionModel().addChangeListener(this);
 		
-		// How to remove the preview of panels
-		colorChooser.setPreviewPanel(new JPanel());
-		
-		// The panels are numbered from 0 to 4. This will select what panels we can interact with.
-		// They are labeled as what panel contains what type of chooser.
-		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[0]); // Swatch
-		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[1]); // HSV
-		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[2]); // HSL
-		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[3]); // RGB
-		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[4]); // CMYK
+//		// How to remove the preview of panels
+//		colorChooser.setPreviewPanel(new JPanel());
+//		
+//		// The panels are numbered from 0 to 4. This will select what panels we can interact with.
+//		// They are labeled as what panel contains what type of chooser.
+//		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[0]); // Swatch
+//		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[1]); // HSV
+//		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[2]); // HSL
+//		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[3]); // RGB
+//		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[4]); // CMYK
 		
 		
 		pan.add(colorChooser);
