@@ -20,17 +20,19 @@ public class P3Component extends JComponent {
 	public void importImage() {
 		BufferedImage img = null;
 		try {
-			img = ImageIO.read(new File("11"));
+			img = ImageIO.read(new File("Images/11.PNG"));
 		} catch (IOException e) {
+			System.out.println("Couldnt read Images/11.PNG");
 		}
 		this.img = img;
 
 	}
 
-	protected void paintComponent(Graphics g) {
+	protected void paintComponent(Graphics g2) {
 		// Asks the superclass to do its work
-		super.paintComponent(g);
-		g.drawImage(img, 0, 0, null);
+		super.paintComponent(g2);
+		this.setBounds(0, 0, 100, 100);
+		g2.drawImage(img, 0, 0, this);
 
 //		Graphics2D graphics2 = (Graphics2D) g;
 		
