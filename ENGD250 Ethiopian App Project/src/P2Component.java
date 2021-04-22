@@ -26,7 +26,7 @@ public class P2Component extends JComponent {
 		addMouseListener(mousehandler);
 		addMouseMotionListener(mousehandler);
 		
-		adams.add(new P2Shape(10, 100, 8));
+//		adams.add(new P2Shape(10, 100, 8));
 		adams.add(new P2Shape(200, 40, 3));
 		for (int i=0; i<11; i++) {
 			adams.add(new P2Shape(500, 10+50*i, 1));
@@ -78,8 +78,8 @@ public class P2Component extends JComponent {
 				if (e.getButton() == MouseEvent.BUTTON1) {
 					System.out.println("womp");
 					
-					inShape.setColor(0,0,255);
-//					inShape.setBody(100, 10);
+					inShape.setColor(100,250,200);
+//					inShape.setColor(new ColorChooser.getColor());
 
 					P2Component.this.repaint();
 

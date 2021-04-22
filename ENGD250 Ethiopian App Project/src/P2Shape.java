@@ -54,5 +54,8 @@ public class P2Shape {
 		this.color = new Color(r, g, b);
 	}
 	
+	public void setColor(Color color) {
+		this.color = color;
+	}
 	
 }
