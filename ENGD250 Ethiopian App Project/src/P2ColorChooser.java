@@ -6,7 +6,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 
-public class ColorChooser implements ChangeListener{
+public class P2ColorChooser implements ChangeListener{
 
 	JFrame window;
 	JColorChooser colorChooser;
@@ -15,11 +15,11 @@ public class ColorChooser implements ChangeListener{
 	
 	public static void main(String[] thing) {
 		
-		new ColorChooser();
+		new P2ColorChooser();
 		
 	}
 	
-	public ColorChooser() {
+	public P2ColorChooser() {
 		
 		window = new JFrame();
 		window.setSize(900, 700);
@@ -63,7 +63,12 @@ public class ColorChooser implements ChangeListener{
 	public void stateChanged(ChangeEvent e) {
 		// Auto-generated method stub
 		Color newColor = colorChooser.getColor();
+//		System.out.println(colorChooser.getColor());
 		colorPan.setBackground(newColor);
+	}
+	
+	public Color getColor() {
+		return colorChooser.getColor();
 	}
 
 }
