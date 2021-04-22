@@ -39,7 +39,7 @@ public class P2Component extends JComponent {
 		super.paintComponent(g);
 
 //		adam = new P2Shape(10, 100);
-		
+
 		for (P2Shape adam : adams) {
 			Graphics2D graphics2 = (Graphics2D) g;
 			graphics2.setStroke(new BasicStroke(2));
@@ -48,6 +48,7 @@ public class P2Component extends JComponent {
 			graphics2.draw(adam.getBody());
 			graphics2.fill(adam.getBody());
 		}		
+		
 	}
 
 	public void drawNewAdam(Point2D point) {
@@ -65,7 +66,7 @@ public class P2Component extends JComponent {
 			if (adam.getBody().contains(point.getX(), point.getY())) {
 				return adam;
 			}
-		}	
+		}			
 		return null;
 	}
 
@@ -84,7 +85,7 @@ public class P2Component extends JComponent {
 					P2Component.this.repaint();
 
 				} else {
-					System.out.println("Reserved for later");
+					System.out.println("reserved for later");
 				}
 			} else if (e.getButton() == MouseEvent.BUTTON1) {
 				System.out.println("pwop");
