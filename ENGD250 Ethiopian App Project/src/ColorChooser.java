@@ -28,7 +28,7 @@ public class ColorChooser implements ChangeListener{
 		window.setLayout(null);
 		
 		pan = new JPanel();
-		pan.setBounds(100, 50, 600, 350);
+		pan.setBounds(100, 50, 625, 250);
 		pan.setBackground(Color.GREEN);
 		window.add(pan);
 		
@@ -36,16 +36,15 @@ public class ColorChooser implements ChangeListener{
 		colorChooser.getSelectionModel().addChangeListener(this);
 		
 //		// How to remove the preview of panels
-//		colorChooser.setPreviewPanel(new JPanel());
+		colorChooser.setPreviewPanel(new JPanel());
 //		
 //		// The panels are numbered from 0 to 4. This will select what panels we can interact with.
 //		// They are labeled as what panel contains what type of chooser.
-//		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[0]); // Swatch
-//		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[1]); // HSV
+		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[4]); // CMYK
+		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[3]); // RGB
 //		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[2]); // HSL
-//		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[3]); // RGB
-//		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[4]); // CMYK
-		
+		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[1]); // HSV
+//		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[0]); // Swatch
 		
 		pan.add(colorChooser);
 		
@@ -60,10 +59,9 @@ public class ColorChooser implements ChangeListener{
 		
 	}
 	
-
 	@Override
 	public void stateChanged(ChangeEvent e) {
-		// TODO Auto-generated method stub
+		// Auto-generated method stub
 		Color newColor = colorChooser.getColor();
 		colorPan.setBackground(newColor);
 	}

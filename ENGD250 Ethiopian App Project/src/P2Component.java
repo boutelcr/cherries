@@ -45,8 +45,6 @@ public class P2Component extends JComponent {
 		
 	}
 
-	
-	
 	public P2Shape inShape(Point2D point) {
 		if (adam.body.contains(point.getX(), point.getY())) {
 			return adam;
