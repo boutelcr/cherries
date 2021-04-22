@@ -1,8 +1,12 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
+
+
 import java.awt.image.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.awt.*;
 
 public class P3Component extends JComponent {
@@ -16,18 +20,19 @@ public class P3Component extends JComponent {
 	public void importImage() {
 		BufferedImage img = null;
 		try {
-			img = ImageIO.read(new File("strawberry.jpg"));
+			img = ImageIO.read(new File("11"));
 		} catch (IOException e) {
 		}
-		this.img = img; 
+		this.img = img;
+
 	}
 
 	protected void paintComponent(Graphics g) {
 		// Asks the superclass to do its work
 		super.paintComponent(g);
+		g.drawImage(img, 0, 0, null);
 
-		Graphics2D graphics2 = (Graphics2D) g;
+//		Graphics2D graphics2 = (Graphics2D) g;
 		
 	}
 }
-
