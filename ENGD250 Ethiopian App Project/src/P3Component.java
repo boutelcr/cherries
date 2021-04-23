@@ -9,6 +9,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.*;
 
+// @Author - Desirae Webster
+
 public class P3Component extends JComponent {
 	BufferedImage img;
 

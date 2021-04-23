@@ -6,6 +6,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 
+// @Author -- Sage Dooley
+
 public class P2ColorChooser implements ChangeListener{
 
 	JFrame window;
