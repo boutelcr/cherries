@@ -2,6 +2,8 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
+// @Authors - Caleb Boutell, Sophie Baer, Sage Dooley
+
 public class P2Viewer {
 	
 	//A viewer for prototype 2 of our concept

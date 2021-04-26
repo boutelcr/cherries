@@ -3,6 +3,8 @@ import java.io.IOException;  // Import the IOException class to handle errors
 import java.io.IOException;  // Import the IOException class to handle errors
 import java.io.IOException;  // Import the IOException class to handle errors
 
+// @Author - Sophie Baer
+
 public class FileWrite {
 	public static void main(String[] args) {
 	    try {

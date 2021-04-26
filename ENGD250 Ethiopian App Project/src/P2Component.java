@@ -12,6 +12,8 @@ import java.util.ArrayList;
 
 import javax.swing.JComponent;
 
+ // @Authors -- Caleb Boutell, Sophie Baer, Sage Dooley 
+
 public class P2Component extends JComponent {
 
 	// The component of Prototype 2 of our concept
