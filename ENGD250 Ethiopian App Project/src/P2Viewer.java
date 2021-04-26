@@ -14,13 +14,14 @@ public class P2Viewer {
 
 		frame.setSize(frameWidth, frameHeight);
 		frame.setTitle("Click the squares");
+		
 
 		P2Component component = new P2Component();
-//		frame.add(component);
+		frame.add(component);
 		P3Component component3 = new P3Component();
-//		frame.add(component3);
-		frame.getContentPane().add(component3,BorderLayout.CENTER);
-		frame.getContentPane().add(component,BorderLayout.NORTH);
+		frame.add(component3);
+//		frame.getContentPane().add(component3,BorderLayout.CENTER);
+//		frame.getContentPane().add(component,BorderLayout.NORTH);
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
