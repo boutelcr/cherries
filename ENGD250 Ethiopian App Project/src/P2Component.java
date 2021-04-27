@@ -7,6 +7,7 @@ import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
@@ -22,6 +23,7 @@ public class P2Component extends JComponent {
 	ArrayList<P2Shape> adams = new ArrayList<P2Shape>();
 	ArrayList<Point2D> newAdamNodes = new ArrayList<Point2D>();
 	JColorChooser myColorChooser = new P2ColorChooser().getColorChooser();
+	ArrayList<Ellipse2D> guidePoints = new ArrayList<Ellipse2D>();
 	
 	public P2Component() {
 		super();
@@ -51,17 +53,26 @@ public class P2Component extends JComponent {
 
 			graphics2.draw(adam.getBody());
 			graphics2.fill(adam.getBody());
+
+			graphics2.setColor(new Color(0,0,0));
+			for (Ellipse2D guidePoint : guidePoints) {
+				graphics2.draw(guidePoint);
+			}
+			
 		}		
 		
 	}
 
-	public void drawNewAdam(Point2D point) {
-		if (newAdamNodes.size() < 5) {
+	public void drawNewAdam(Point2D point, Boolean stillDrawing) {
+		if (stillDrawing) {
 			newAdamNodes.add(point);
+			guidePoints.add(new Ellipse2D.Double(point.getX(),point.getY(),2,2));
+			P2Component.this.repaint();
 		} else {
 			adams.add(new P2Shape(newAdamNodes));
-			P2Component.this.repaint();
 			newAdamNodes.clear();
+			guidePoints.clear();
+			P2Component.this.repaint();
 		}
 	}
 	
@@ -95,9 +106,13 @@ public class P2Component extends JComponent {
 				} else {
 					System.out.println("reserved for later");
 				}
-			} else if (e.getButton() == MouseEvent.BUTTON1) {
-				System.out.println("pwop");
-				drawNewAdam(e.getPoint());
+			} else {
+				if (e.getButton() == MouseEvent.BUTTON1) {
+					System.out.println("pwop");
+					drawNewAdam(e.getPoint(), true);
+				} else {
+					drawNewAdam(e.getPoint(), false);
+				}
 			}
 		}
 
