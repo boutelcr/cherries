@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.awt.Color;
 import java.awt.Polygon;
 
+// @Author - Caleb Boutell
+
 public class P2Shape {
 	
 	//A drawable and clickable shape for Prototype 2 of our concept
