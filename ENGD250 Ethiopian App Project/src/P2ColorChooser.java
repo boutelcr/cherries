@@ -54,8 +54,7 @@ public class P2ColorChooser implements ChangeListener{
 		colorPan = new JPanel();
 		colorPan.setBounds(200, 420, 400, 100);
 		colorPan.setBackground(Color.WHITE);
-		window.add(colorPan);
-		
+		window.add(colorPan);		
 		
 		window.setVisible(true);
 		
@@ -73,8 +72,8 @@ public class P2ColorChooser implements ChangeListener{
 		return colorChooser.getColor();
 	}
 	
-	public JPanel getColorPan() {
-		return colorPan;
+	public JColorChooser getColorChooser() {
+		return colorChooser;
 	}
 
 }
