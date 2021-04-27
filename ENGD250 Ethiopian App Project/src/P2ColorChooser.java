@@ -72,5 +72,9 @@ public class P2ColorChooser implements ChangeListener{
 	public Color getColor() {
 		return colorChooser.getColor();
 	}
+	
+	public JPanel getColorPan() {
+		return colorPan;
+	}
 
 }
