@@ -10,6 +10,7 @@ import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
+import javax.swing.JColorChooser;
 import javax.swing.JComponent;
 
  // @Authors -- Caleb Boutell, Sophie Baer, Sage Dooley 
@@ -20,6 +21,7 @@ public class P2Component extends JComponent {
 
 	ArrayList<P2Shape> adams = new ArrayList<P2Shape>();
 	ArrayList<Point2D> newAdamNodes = new ArrayList<Point2D>();
+	JColorChooser myColorChooser = new P2ColorChooser().getColorChooser();
 	
 	public P2Component() {
 		super();
@@ -71,6 +73,10 @@ public class P2Component extends JComponent {
 		}			
 		return null;
 	}
+	
+	public JColorChooser getColorChooser() {
+		return myColorChooser;
+	}
 
 	public class P2MouseHandler implements MouseMotionListener, MouseListener {
 		
@@ -81,8 +87,8 @@ public class P2Component extends JComponent {
 				if (e.getButton() == MouseEvent.BUTTON1) {
 					System.out.println("womp");
 					
-					inShape.setColor(100,250,200);
-//					inShape.setColor(new ColorChooser.getColor());
+//					inShape.setColor(100,250,200);
+					inShape.setColor(myColorChooser.getColor());
 
 					P2Component.this.repaint();
 
