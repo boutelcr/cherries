@@ -146,5 +146,16 @@ public class P2Component extends JComponent {
 			// nothing to do
 		}
 	}
-
+	
+	public void saveFile(String fileName) {
+		ArrayList<String> names = new ArrayList<String>();
+		names.add("desirae");
+		names.add("sophie");
+		names.add("caleb");
+		names.add("sage");
+		SavingFiles.saveFile(fileName);
+		FileWrite.writeFile(names, fileName);
+		
+	}
 }
+
