@@ -28,9 +28,9 @@ public class P2Viewer {
 //		frame.add(component);
 //		frame.add(component3);
 //		frame.add(colorComponent);
-		
-		frame.getContentPane().add(component,BorderLayout.CENTER);
 		frame.getContentPane().add(component3,BorderLayout.NORTH);
+
+		frame.getContentPane().add(component,BorderLayout.CENTER);
 		frame.getContentPane().add(colorComponent, BorderLayout.SOUTH);
 //		System.out.println(colorComponent.getColor());
 

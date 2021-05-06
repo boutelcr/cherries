@@ -33,10 +33,11 @@ public class P2Component extends JComponent {
 		addMouseMotionListener(mousehandler);
 		
 //		adams.add(new P2Shape(10, 100, 8));
-		adams.add(new P2Shape(200, 40, 3));
-		for (int i=0; i<11; i++) {
-			adams.add(new P2Shape(500, 10+50*i, 1));
-		}
+//		adams.add(new P2Shape(200, 40, 3));
+//		for (int i=0; i<11; i++) {
+//			adams.add(new P2Shape(500, 10+50*i, 1));
+//		}
+		saveFile("test.txt"); 
 	}
 	
 	@Override
@@ -145,6 +146,17 @@ public class P2Component extends JComponent {
 		public void mouseExited(MouseEvent e) {
 			// nothing to do
 		}
+	}
+	
+	public void saveFile(String fileName) {
+		ArrayList<String> names = new ArrayList<String>();
+		names.add("desirae");
+		names.add("sophie");
+		names.add("caleb");
+		names.add("sage");
+		SavingFiles.saveFile(fileName);
+		FileWrite.writeFile(names, fileName);
+		
 	}
 
 }
